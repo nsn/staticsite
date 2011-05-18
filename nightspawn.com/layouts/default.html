@@ -8,12 +8,14 @@
   </head>
   <body>
     <nav>
-      <a href="/about/index.html">About</a>
-      <a href="/noise/index.html">Noise</a>
-      <a href="/pastimes/index.html">Pastimes</a>
-      <a href="/travels/index.html">Travels</a>
-      <a href="/tinkerings/index.html">Tinkerings</a>
-      <a href="/rants/index.html">Rants</a>
+      <% 
+         navItems = @site.items.find_all{ |itm| itm[:nav] }.sort_by{ |itm| itm[:navindex] }
+         navItems.each do |i| 
+      %>
+        <% if i[:nav] %>
+         <%= link_to(i[:title], i.reps[0].path) %> #
+        <% end %>
+      <%end%>
     </nav>
     <div id="main">
       <%= yield %>

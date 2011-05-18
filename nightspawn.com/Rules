@@ -14,9 +14,14 @@ compile '/stylesheet/' do
   # don't filter or layout
 end
 
-compile '*' do
+compile '/' do
   filter :erb
   layout 'default'
+end
+
+compile '*' do
+    filter :kramdown
+    layout 'default'
 end
 
 route '/stylesheet/' do
