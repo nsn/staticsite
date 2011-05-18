@@ -12,16 +12,16 @@ Some information about me and this website:
 
 /me
 ---
-
+<img src="/images/about/me.png"/>
 My name is Michael Bayer, I live in Karlsruhe, Germany and I am pretty old for my age.
 
 I currently work as a software engineer at [Gameforge AG](http://corporate.gameforge.com/en/), mainly developing 
 JEE applications for large MMORPGs. Former employers include [1&1](httt://einsundeins.com) and Schlund+Partner (RIP).
-I got a degree in Computer Science from the [university of applied science, Karlsruhe](http://hs-karlsruhe.de/).
+I have a degree in Computer Sciences from the [university of applied science, Karlsruhe](http://hs-karlsruhe.de/).
 
 My hobbies include:
 
--   developing JEE applications (not for large MMORPGs)
+-   coding - lately developing JEE applications (not for large MMORPGs though)
 -   snowboarding (unfortunately not as much as a want to anymore)
 -   traveling (envy my pictures!)
 -   retro gaming (I consider myself to be the best puzzle bobble player in the world)
