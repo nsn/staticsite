@@ -13,6 +13,7 @@ route '/static/*' do
   # /static/foo.html/ → /foo.html
   item.identifier[7..-2] + '.' + item[:extension]
 end
+
 compile '/static/*' do
 end
 
@@ -25,8 +26,13 @@ compile '/' do
   layout 'default'
 end
 
+# default compile rule
 compile '*' do
-    filter :kramdown
+    if item[:extension] == 'md'
+        filter :kramdown
+    else
+        filter :erb
+    end
     layout 'default'
 end
 

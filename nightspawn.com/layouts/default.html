@@ -17,6 +17,10 @@
         <% end %>
       <%end%>
     </nav>
+    subnav:
+    <% @item.children.each do |c|  %>
+        <%= link_to(c[:title], c.reps[0].path) %><br/>
+    <%end%>
     <div id="main">
       <%= yield %>
     </div>
