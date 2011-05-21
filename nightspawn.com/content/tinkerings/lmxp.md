@@ -15,7 +15,7 @@ recommend using LMXP at all, as it iscurrently rather incomplete (though it tend
 what I wrote it for). As a first "real" software project it was a really good experience, 
 and you can still download it for historical purposes:
 
-[binaries](/files/lmxp.jar) - [sources](/files/lmxp_src.tgz)
+[binaries](/files/tinkerings/lmxp.jar) - [sources](/files/tinkerings/lmxp_src.tgz)
 
 
 

@@ -38,6 +38,9 @@ I do like a lot of games, and I used to put in quite a lot of hours playing them
 in the games industry, my other hobbies and maintaining at least some resemblence of a social life I just don't 
 find a lot of time to dedicate to gaming.
 
+Also - considering the last games I truly played being Picross, Picross3D and Plants vs. Zombies I probably have 
+to face the fact that I might have become a casual gamer...
+
 ### Chrono Series ###
 Chrono Trigger is probably the best JRPG ever, and Chrono Cross might be the single game I have to fondest memories of 
 
