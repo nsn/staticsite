@@ -9,22 +9,22 @@
 #   "content/about.html"). To select all children, grandchildren, ... of an
 #   item, use the pattern "/about/*/"; "/about/*" will also select the parent,
 #   because "*" matches zero or more characters.
-route '/static/*' do
+route '/static/*/' do
   # /static/foo.html/ → /foo.html
   item.identifier[7..-2] + '.' + item[:extension]
 end
 
-compile '/static/*' do
+compile '/static/*/' do
 end
 
 compile '/stylesheet/' do
   # don't filter or layout
 end
 
-compile '/' do
-  filter :erb
-  layout 'default'
-end
+#compile '/' do
+#  filter :erb
+#  layout 'default'
+#end
 
 # default compile rule
 compile '*' do
