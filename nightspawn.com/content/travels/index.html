@@ -1,0 +1,17 @@
+--- 
+title: Travels
+nav: true
+navindex: 90
+---
+
+<h1>Travels</h1>
+
+I recently (re)discovered my love for traveling, I guess I have to thank my girlfriend for that.
+However - we try to spend some time abroad at least once a year, so here are a few pictures:
+<br/>
+
+<% @item.children.each do |c| %>
+   <%= c[:title] %>
+<% end %>
+
+
