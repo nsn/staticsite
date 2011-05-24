@@ -7,22 +7,24 @@
     <meta name="generator" content="nanoc 3.1.6">
   </head>
   <body>
-    <nav>
-      <% 
-         navItems = @site.items.find_all{ |itm| itm[:nav] }.sort_by{ |itm| itm[:navindex] }
-         navItems.each do |i| 
-      %>
-        <% if i[:nav] %>
-         <%= link_to(i[:title], i.reps[0].path) %> #
-        <% end %>
+    <div id="content" style="background-image: url(/images/<%= 'background.jpg' %>)">
+      <nav>
+        <% 
+           navItems = @site.items.find_all{ |itm| itm[:nav] }.sort_by{ |itm| itm[:navindex] }
+           navItems.each do |i| 
+        %>
+          <% if i[:nav] %>
+           <%= link_to(i[:title], i.reps[0].path) %> #
+          <% end %>
+        <%end%>
+      </nav>
+      subnav:
+      <% @item.children.each do |c|  %>
+          <%= link_to(c[:title], c.reps[0].path) %><br/>
       <%end%>
-    </nav>
-    subnav:
-    <% @item.children.each do |c|  %>
-        <%= link_to(c[:title], c.reps[0].path) %><br/>
-    <%end%>
-    <div id="main">
-      <%= yield %>
+      <div id="main">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
