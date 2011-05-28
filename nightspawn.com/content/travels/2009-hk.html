@@ -7,3 +7,8 @@ title: Hongkong/Macao 2009
 In october of 2009 we spent 12 days in Hongkong and even managed to visit Macao for a day. 
 What a beautiful city, we had a great time there.
 
+<ul>
+  <% @item.children.each do |img| %>
+    <li><a href="<%= img.path %>"><%= img.path %></a></li>
+  <% end %>
+</ul>

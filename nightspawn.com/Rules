@@ -15,16 +15,33 @@ route '/static/*/' do
 end
 
 compile '/static/*/' do
+# don't do anything with static content
+end
+
+compile '/travels/20*/' do
+end
+
+route '/travels/20*/' do
+  item.identifier.chop + '.' + item[:extension]
+end
+
+#create thumbnail representation
+compile '/travels/20*/', :rep => :thumbnail do
+  if item[:extension] == 'jpg'
+    filter :thumbnailize, :width => 200
+  else
+    filter :erb
+  end
+end
+
+#route thumbnails
+route '/travels/20*/', :rep => :thumbnail do
+  item.identifier.chop + '-thumbnail.' + item[:extension]
 end
 
 compile '/stylesheet/' do
   # don't filter or layout
 end
-
-#compile '/' do
-#  filter :erb
-#  layout 'default'
-#end
 
 # default compile rule
 compile '*' do
