@@ -23,37 +23,40 @@
   </head>
   <body>
     <div id="content" style="background-image: url(/images/<%= 'background.jpg' %>)">
-        <header class="wrapper">
-          <nav class="box">
-            <ul>
-            <% 
-               navItems = @site.items.find_all{ |itm| itm[:nav] }.sort_by{ |itm| itm[:navindex] }
-               navItems.each do |i| 
-            %>
-              <li>
-              <% if i[:nav] %>
-               <%= link_to(i[:title], i.reps[0].path) %>
-              <% end %>
-              </li>
-            <%end%>
-            </ul>
-          </nav>
-        </header>
-
-        <aside class="box">
+      <header>
+        <nav class="box">
           <ul>
-          <% @item.children.each do |c|  %>
+          <% 
+             navItems = @site.items.find_all{ |itm| itm[:nav] }.sort_by{ |itm| itm[:navindex] }
+             navItems.each do |i| 
+          %>
             <li>
-              <%= link_to(c[:title], c.reps[0].path) %>
+            <% if i[:nav] %>
+             <%= link_to(i[:title], i.reps[0].path) %>
+            <% end %>
             </li>
           <%end%>
+          </ul>
+        </nav>
+      </header>
+
+      <aside class="box">
+        <ul>
+        <% @item.children.each do |c|  %>
           <li>
-        </aside>
-      <!--
-      <div id="main">
+            <%= link_to(c[:title], c.reps[0].path) %>
+          </li>
+        <%end%>
+        <li>
+      </aside>
+
+      <article class="box">
         <%= yield %>
-      </div>
-      -->
+      </article>
+
+      <footer class="wrapper">
+        <h3>A nice footer</h3>
+      </footer>
       <!--
       <div id="main" class="wrapper">
         <aside>
