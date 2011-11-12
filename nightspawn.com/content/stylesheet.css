@@ -131,8 +131,25 @@ nav a{
 	text-decoration:none;
 }
 
+aside ul {
+  margin: 0px 0px 0px 0px;
+}
+
 aside ul li {
- list-style:none;
+  list-style:none;
+}
+
+aside ul li :hover {
+    box-shadow: 0px 0px 30px 7px #ffffff; /* Opera 10.5, IE9, Chrome 10+ */
+    background-color: #f0f0f0;
+}
+
+aside ul li a {
+  display: block;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
 }
 
 aside{
