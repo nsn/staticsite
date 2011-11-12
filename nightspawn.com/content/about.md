@@ -12,7 +12,7 @@ Some information about me and this website:
 
 /me
 ---
-<img src="/images/about/me.png"/>
+<img src="/images/about/me.png" class="floatleft"/>
 My name is Michael Bayer, I live in Karlsruhe, Germany and I am pretty old for my age.
 
 I currently work as a software engineer at [Gameforge AG](http://corporate.gameforge.com/en/), mainly developing 

@@ -87,9 +87,10 @@ a:hover { color: #036; }
 */
 
 body{
-    font-family:Helvetica, Helvetica Neue, Arial, sans-serif;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
   background: #000;
-  color: white;
+  color: #607890;
+  font-size: 20px;
 }
 
 #content {
@@ -102,6 +103,19 @@ body{
   background-repeat: no-repeat;
 }
 
+.floatleft {
+  float: left;
+  margin: 0px 10px 10px 9px;
+}
+
+.wide {
+  width: 1250px;
+}
+
+.narrow {
+  width: 1025px;
+}
+
 .box {
   background-color: white;
   background-color: transparent;
@@ -112,13 +126,14 @@ body{
 nav {
   text-align: center;
   font-weight: bold;
-  margin: 0px 0px 30px 0px;
   width: 1270px;
+  margin: 0px 0px 30px 0px;
 }
 
 nav ul, nav ul li{
 	display:inline;
-  font-size: 22px;
+  font-size: 125%;
+  font-weight: bold;
 }
 
 nav ul li :hover {
@@ -155,18 +170,38 @@ aside ul li a {
 aside{
   	float:left;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 110%;
     width: 200px;
     margin-right: 25px;
 }
 
 article {
   float:left;
-  width: 1045px;
+  padding: 10px 10px 10px 10px;
 }
+
+h1,h2,h3,h4,h5 {
+  font-weight: bold;
+  margin: 5px 15px 10px 0px;
+}
+
+h1 {
+  font-size: 125%;
+  padding-left: 5px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid;
+}
+
+h2 {
+  font-size: 115%;
+  text-decoration: underline;
+}
+
 
 footer {
   clear: both;
+  text-align: center;
+  width: 100%;
 }
 
 
