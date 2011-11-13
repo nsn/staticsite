@@ -19,6 +19,7 @@ index_filenames: [ 'index.html' ]
 # before and after the last site compilation.
 enable_output_diff: false
 
+
 # The data sources where nanoc loads its data from. This is an array of
 # hashes; each array element represents a single data source. By default,
 # there is only a single data source that reads data from the "content/" and
@@ -39,5 +40,12 @@ data_sources:
     # The path where layouts should be mounted. The layouts root behaves the
     # same as the items root, but applies to layouts rather than items.
     layouts_root: /
+
+    # Only strip the last suffix with a period
+    config:
+      allow_periods_in_identifiers: true
+
+     
+
 
 base_url: http://nightspawn.com

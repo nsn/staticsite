@@ -93,6 +93,15 @@ body{
   font-size: 16px;
 }
 
+a {
+  text-decoration: none;
+  color: #003366;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 #content {
   margin-top: 75px;
   padding: 5px;
@@ -142,7 +151,7 @@ nav ul li :hover {
     background-color: #f0f0f0;
 }
 
-nav a{
+nav a, nav a:hover {
 	padding: 0px 20px 0px 20px;
 	text-decoration:none;
 }
@@ -160,7 +169,7 @@ aside ul li :hover {
     background-color: #f0f0f0;
 }
 
-aside ul li a {
+aside a, aside a:hover {
   display: block;
   margin-left: 10px;
   margin-top: 5px;
@@ -181,11 +190,28 @@ article {
   padding: 10px 10px 10px 10px;
 }
 
+.backLink {
+  float: right;
+}
+
 #sidebar {
   float: left;
   width: 200px;
   margin-left: 25px;
   padding-bottom: 10px;
+}
+
+#sidebar ul {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#sidebar li {
+  list-style: none;
+}
+
+#sidebar .linklist {
 }
 
 h1,h2,h3,h4,h5 {
