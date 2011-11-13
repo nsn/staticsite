@@ -64,7 +64,6 @@
         <article class="box <%= width %>">
           <%= yield %>
         </article>
-      <% end %>
 
       <div id="sidebar" class="box">
 <script src="http://widgets.twimg.com/j/2/widget.js"></script>
@@ -74,17 +73,17 @@ new TWTR.Widget({
   type: 'profile',
   rpp: 8,
   interval: 30000,
-  width: 180,
+  width: 200,
   height: 300,
   theme: {
     shell: {
-      background: '#d9d9d9',
-      color: '#8f0e8f'
+      background: '#607890',
+      color: '#cfcfcf'
     },
     tweets: {
-      background: '#000000',
-      color: '#ffffff',
-      links: '#4aed05'
+      background: '#cfcfcf',
+      color: '#607890',
+      links: '#607890'
     }
   },
   features: {
@@ -104,6 +103,7 @@ new TWTR.Widget({
       </div>
 
     </div>
+      <% end %>
     <footer>
       <h3>A nice footer</h3>
     </footer>
