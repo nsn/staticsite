@@ -1,5 +1,11 @@
 
-$(function(){
-	$("#jquery-test").html("jQuery is loaded");
+
+$(document).ready(function(){
+
+  // fancybox
+  $("a.gallerylink").fancybox();
+
+
 });
+
 

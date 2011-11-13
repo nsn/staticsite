@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css.css" type="text/css" media="screen" />
 
     <script src="/js/libs/modernizr-1.7.min.js"></script>
   </head>
@@ -59,7 +59,7 @@
           <li>
         </aside>
         <% width = "narrow" %>
-      <% end #renderAside %>
+      <% end %>
 
       <% if !item[:hidearticle] %>
         
@@ -103,18 +103,16 @@
             <li><a href="https://github.com/nsn/">Github</a> </li>
           </ul>
         </div>
-      <% end #hidearticle %>
+      <% end %>
     </div>
     <footer>
-      <h3>A nice footer</h3>
+      Copyright © 2011 NightSpawN | powered by <a href="http://nanoc.stoneship.org/">nanoc</a>, <a href="http://jquery.com/">jQuery</a> and <a href="http://fancybox.net/">fancybox</a>
     </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
     <script type="text/javascript" src="/fancybox/jquery.easing-1.4.pack.js"></script>
     <script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
 
-    <script src="/js/script.js"></script>
-    <!--
-    <p id="jquery-test" href="#" class="info">jQuery is not loaded (http://localhost/ needed)</p>
-    -->
   </body>
 </html>

@@ -1,5 +1,6 @@
 --- 
 title: Hongkong/Macao 2009
+hideaside: true
 ---
 
 <h1><%= @item[:title] %></h1>
@@ -11,5 +12,5 @@ What a beautiful city, we had a great time there.
 
 
 <% @item.children.each do |img| %>
-  <a href="<%= img.path %>"><img src="<%= img.path(:rep => :thumbnail) %>"/></a>
+  <a href="<%= img.path %>" rel="travelpics" class="gallerylink"><img src="<%= img.path(:rep => :thumbnail) %>"/></a>
 <% end %>
