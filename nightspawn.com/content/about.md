@@ -21,7 +21,7 @@ I have a degree in Computer Sciences from the [university of applied science, Ka
 
 My hobbies include:
 
--   coding - lately developing JEE applications (not for large MMORPGs though)
+-   coding - as of late I developed an unhealthy fascination with JEE
 -   snowboarding (unfortunately not as much as a want to anymore)
 -   traveling (envy my pictures!)
 -   retro gaming (I consider myself to be the best puzzle bobble player in the world)
