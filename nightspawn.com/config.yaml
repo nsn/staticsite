@@ -46,6 +46,13 @@ data_sources:
       allow_periods_in_identifiers: true
 
      
+e rsync + ssh for live site. To deploy:
+#
+#   % rake deploy:rsync
+deploy:
+  default:
+    dst: "nightspawn.com:~/staticsite"
+    options: ['-ave ssh', '--exclude=.DS_Store', '--exclude=*~']
 
 
 base_url: http://nightspawn.com

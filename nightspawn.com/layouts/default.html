@@ -68,8 +68,13 @@
           <br class="clearfix"/>
           <%= yield %>
           <% if item[:kind] == "article" %>
-            <div class="blogarticlefooter"
-              authored by nsn on <%= item[:created_at] %>
+            <% 
+              @item[:tags].each do |t|
+              end
+            %>
+            <div class="blogarticlefooter">
+              authored by nsn on <%= Time.parse(item[:created_at]).strftime("%Y-%d-%m") %>
+              tags: <%= @item[:tags].nil? ? '' : @item[:tags].join(', ') %>
             </div>
           <% end %>
         </article>
@@ -108,8 +113,9 @@
           <h3>&rarr; profiles</h3>
           <div id="links">
             <ul>
-              <li><a href="https://github.com/nsn/">Github</a> </li>
-              <li><a href="https://twitter.com/#!/pneis">Twitter</a> </li>
+              <li><a href="https://github.com/nsn/">Github - nsn</a> </li>
+              <li><a href="https://twitter.com/#!/pneis">Twitter - @pneis</a> </li>
+              <li><a href="http://stackoverflow.com/users/263698/nsn">stackoverflow - nsn</a> </li>
             </ul>
           </div>
           <!-- latest blog posts -->
@@ -119,7 +125,9 @@
               <% 
                  sorted_articles.slice(0..2).each do |a|
               %>
-                <%= link_to(a[:title], a.reps[0].path) %>
+                <li>
+                  <%= link_to(a[:title], a.reps[0].path) %>
+                </li>
               <%end%>
             </ul>
           </div>
