@@ -47,6 +47,15 @@ compile '/stylesheet/' do
   # don't filter or layout
 end
 
+#blog feed
+compile '/rants/feed/' do
+  filter :erb
+end
+
+route '/rants/feed/' do
+  '/rants/feed.xml'
+end
+
 # default compile rule
 compile '*' do
     if item[:extension] == 'md'

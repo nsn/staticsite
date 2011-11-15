@@ -65,10 +65,16 @@
         
         <article class="box <%= width %>">
           <%= link_to("&larr; back to " + item.parent[:title], item.parent.reps[0].path, :class => "backLink") %> 
-          <br class="clearfix">
+          <br class="clearfix"/>
           <%= yield %>
+          <% if item[:kind] == "article" %>
+            <div class="blogarticlefooter"
+              authored by nsn on <%= item[:created_at] %>
+            </div>
+          <% end %>
         </article>
 
+        <!-- twitter widget -->
         <div id="sidebar" class="box">
           <script src="http://widgets.twimg.com/j/2/widget.js"></script>
           <script>
@@ -98,10 +104,25 @@
             }
           }).render().setUser('pneis').start();
           </script>
-
-          <ul>
-            <li><a href="https://github.com/nsn/">Github</a> </li>
-          </ul>
+          <!-- end twitter widget -->
+          <h3>&rarr; profiles</h3>
+          <div id="links">
+            <ul>
+              <li><a href="https://github.com/nsn/">Github</a> </li>
+              <li><a href="https://twitter.com/#!/pneis">Twitter</a> </li>
+            </ul>
+          </div>
+          <!-- latest blog posts -->
+          <div id="blogposts">
+            <h3>&rarr; latest blog posts</h3>
+            <ul>
+              <% 
+                 sorted_articles.slice(0..2).each do |a|
+              %>
+                <%= link_to(a[:title], a.reps[0].path) %>
+              <%end%>
+            </ul>
+          </div>
         </div>
       <% end %>
     </div>
