@@ -51,7 +51,7 @@ e rsync + ssh for live site. To deploy:
 #   % rake deploy:rsync
 deploy:
   default:
-    dst: "nightspawn.com:~/staticsite"
+    dst: "p6739949@nightspawn.com:~/staticsite"
     options: ['-ave ssh', '--exclude=.DS_Store', '--exclude=*~']
 
 
