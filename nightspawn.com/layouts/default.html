@@ -51,7 +51,7 @@
       <% if renderAside %>
         <aside class="box">
           <ul>
-          <% @item.children.each do |c|  %>
+          <% @item.children.find_all{ |itm| !itm[:hidden]}.each do |c|  %>
             <li>
               <%= link_to(c[:title], c.reps[0].path) %>
             </li>
