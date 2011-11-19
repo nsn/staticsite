@@ -79,36 +79,36 @@
           <% end %>
         </article>
 
-        <!-- twitter widget -->
         <div id="sidebar" class="box">
-          <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-          <script>
-          new TWTR.Widget({
-            version: 2,
-            type: 'profile',
-            rpp: 8,
-            interval: 30000,
-            width: 200,
-            height: 300,
-            theme: {
-              shell: {
-                background: '#607890',
-                color: '#cfcfcf'
-              },
-              tweets: {
-                background: '#cfcfcf',
-                color: '#607890',
-                links: '#003366'
-              }
+        <!-- twitter widget -->
+        <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <script>
+        new TWTR.Widget({
+          version: 2,
+          type: 'profile',
+          rpp: 6,
+          interval: 30000,
+          width: 'auto',
+          height: 300,
+          theme: {
+            shell: {
+              background: '#607890',
+              color: '#cfcfcf'
             },
-            features: {
-              scrollbar: false,
-              loop: false,
-              live: true,
-              behavior: 'all'
+            tweets: {
+              background: '#cfcfcf',
+              color: '#607890',
+              links: '#003366'
             }
-          }).render().setUser('pneis').start();
-          </script>
+          },
+          features: {
+            scrollbar: false,
+            loop: false,
+            live: true,
+            behavior: 'all'
+          }
+        }).render().setUser('pneis').start();
+        </script>
           <!-- end twitter widget -->
           <h3>&rarr; profiles</h3>
           <div id="links">

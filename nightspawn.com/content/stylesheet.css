@@ -118,11 +118,11 @@ a:hover {
 }
 
 .wide {
-  width: 1025px;
+  width: 1005px;
 }
 
 .narrow {
-  width: 800px;
+  width: 760px;
 }
 
 .box {
@@ -181,7 +181,7 @@ aside{
   	float:left;
     font-weight: bold;
     font-size: 110%;
-    width: 200px;
+    width: 220px;
     margin-right: 25px;
 }
 
@@ -196,7 +196,7 @@ article {
 
 #sidebar {
   float: left;
-  width: 200px;
+  width: 220px;
   margin-left: 25px;
   padding-bottom: 10px;
 }
