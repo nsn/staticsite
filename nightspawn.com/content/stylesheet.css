@@ -103,6 +103,7 @@ a:hover {
 }
 
 #content {
+  position: relative;
   margin-top: 75px;
   padding: 5px;
   width: 1280px;
@@ -110,6 +111,53 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   background-repeat: no-repeat;
+}
+
+.nav-image {
+  z-index: 10;
+  position: absolute; 
+  display: none;
+}
+
+.nav_about-image {
+  top: 270px;
+  left: 0px;
+  width: 723px;
+  height: 485px;
+}
+
+.nav_tinkerings-image {
+  top: 134px;
+  left: 329px;
+  width: 598px;
+  height: 539px;
+}
+
+.nav_travels-image {
+  top: 5px;
+  left: 628px;
+  width: 261px;
+  height: 137px;
+}
+
+.nav_rants-image {
+  top: 310px;
+  left: 495px;
+  width: 756px;
+  height: 335px;
+}
+
+#nav_block-color {
+  z-index: 5;
+  top: 347px;
+  left: 289px;
+  width: 482px;
+  height: 409px;
+}
+
+#text {
+  z-index: 20;
+  position: relative;
 }
 
 .floatleft {

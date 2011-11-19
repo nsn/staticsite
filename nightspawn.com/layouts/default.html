@@ -24,115 +24,135 @@
   </head>
   <body>
     <div id="content" style="background-image: url(/images/<%= 'background.jpg' %>)">
-      <header>
-        <nav class="box">
-          <ul>
-          <% 
-             navItems = @site.items.find_all{ |itm| itm[:nav] }.sort_by{ |itm| itm[:navindex] }
-             navItems.each do |i| 
-          %>
-            <li>
-            <% if i[:nav] %>
-             <%= link_to(i[:title], i.reps[0].path) %>
-            <% end %>
-            </li>
-          <%end%>
-          </ul>
-        </nav>
-      </header>
-  
-      <%
-        # render aside?
-        renderAside = (item.children.length > 0) && !item[:hideaside]
-        # article width
-        width = "wide"
+      <% 
+         navItems = @site.items.find_all{ |itm| itm[:nav] }.sort_by{ |itm| itm[:navindex] }
       %>
-
-      <% if renderAside %>
-        <aside class="box">
-          <ul>
-          <% @item.children.find_all{ |itm| !itm[:hidden]}.each do |c|  %>
-            <li>
-              <%= link_to(c[:title], c.reps[0].path) %>
-            </li>
-          <%end%>
-          <li>
-        </aside>
-        <% width = "narrow" %>
+      <!-- section images -->
+      <span class="nav-image" 
+            id="nav_block-color" 
+            style="background-image: url(/images/block-color.png);"></span>
+      <% 
+         navItems.each do |i| 
+         name = i[:title].downcase
+      %>
+        <span class="nav-image nav_<%= name %>-image" 
+              id="nav_<%= name %>-gray" 
+              style="background-image: url(/images/<%= name %>-gray.png);"></span>
+        <span class="nav-image nav_<%= name %>-image" 
+              id="nav_<%= name %>-color" 
+              style="background-image: url(/images/<%= name %>-color.png);"></span>
       <% end %>
-
-      <% if !item[:hidearticle] %>
-        
-        <article class="box <%= width %>">
-          <%= link_to("&larr; back to " + item.parent[:title], item.parent.reps[0].path, :class => "backLink") %> 
-          <br class="clearfix"/>
-          <%= yield %>
-          <% if item[:kind] == "article" %>
+      <div id="text">
+        <header>
+          <nav class="box">
+            <ul>
             <% 
-              @item[:tags].each do |t|
-              end
+               navItems.each do |i| 
             %>
-            <div class="blogarticlefooter">
-              authored by nsn on <%= Time.parse(item[:created_at]).strftime("%Y-%d-%m") %>
-              tags: <%= @item[:tags].nil? ? '' : @item[:tags].join(', ') %>
-            </div>
-          <% end %>
-        </article>
+              <li>
+              <% if i[:nav] %>
+               <%= link_to(i[:title].capitalize, i.reps[0].path, :class => 'navlink', :id => 'nav_'+i[:title].downcase) %>
+              <% end %>
+              </li>
+            <%end%>
+            </ul>
+          </nav>
+        </header>
+    
+        <%
+          # render aside?
+          renderAside = (item.children.length > 0) && !item[:hideaside]
+          # article width
+          width = "wide"
+        %>
 
-        <div id="sidebar" class="box">
-        <!-- twitter widget -->
-        <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-        <script>
-        new TWTR.Widget({
-          version: 2,
-          type: 'profile',
-          rpp: 6,
-          interval: 30000,
-          width: 'auto',
-          height: 300,
-          theme: {
-            shell: {
-              background: '#607890',
-              color: '#cfcfcf'
-            },
-            tweets: {
-              background: '#cfcfcf',
-              color: '#607890',
-              links: '#003366'
-            }
-          },
-          features: {
-            scrollbar: false,
-            loop: false,
-            live: true,
-            behavior: 'all'
-          }
-        }).render().setUser('pneis').start();
-        </script>
-          <!-- end twitter widget -->
-          <h3>&rarr; profiles</h3>
-          <div id="links">
+        <% if renderAside %>
+          <aside class="box">
             <ul>
-              <li><a href="https://github.com/nsn/">Github - nsn</a> </li>
-              <li><a href="https://twitter.com/#!/pneis">Twitter - @pneis</a> </li>
-              <li><a href="http://stackoverflow.com/users/263698/nsn">stackoverflow - nsn</a> </li>
-            </ul>
-          </div>
-          <!-- latest blog posts -->
-          <div id="blogposts">
-            <h3>&rarr; latest blog posts</h3>
-            <ul>
+            <% @item.children.find_all{ |itm| !itm[:hidden]}.each do |c|  %>
+              <li>
+                <%= link_to(c[:title], c.reps[0].path) %>
+              </li>
+            <%end%>
+            <li>
+          </aside>
+          <% width = "narrow" %>
+        <% end %>
+
+        <% if !item[:hidearticle] %>
+          
+          <article class="box <%= width %>">
+            <%= link_to("&larr; back to " + item.parent[:title], item.parent.reps[0].path, :class => "backLink") %> 
+            <br class="clearfix"/>
+            <%= yield %>
+            <% if item[:kind] == "article" %>
               <% 
-                 sorted_articles.slice(0..2).each do |a|
+                @item[:tags].each do |t|
+                end
               %>
-                <li>
-                  <%= link_to(a[:title], a.reps[0].path) %>
-                </li>
-              <%end%>
-            </ul>
+              <div class="blogarticlefooter">
+                authored by nsn on <%= Time.parse(item[:created_at]).strftime("%Y-%d-%m") %>
+                tags: <%= @item[:tags].nil? ? '' : @item[:tags].join(', ') %>
+              </div>
+            <% end %>
+          </article>
+
+          <div id="sidebar" class="box">
+          <!-- twitter widget -->
+          <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+          <script>
+          new TWTR.Widget({
+            version: 2,
+            type: 'profile',
+            rpp: 6,
+            interval: 30000,
+            width: 'auto',
+            height: 300,
+            theme: {
+              shell: {
+                background: '#607890',
+                color: '#cfcfcf'
+              },
+              tweets: {
+                background: '#cfcfcf',
+                color: '#607890',
+                links: '#003366'
+              }
+            },
+            features: {
+              scrollbar: false,
+              loop: false,
+              live: true,
+              behavior: 'all'
+            }
+          }).render().setUser('pneis').start();
+          </script>
+            <!-- end twitter widget -->
+            <h3>&rarr; profiles</h3>
+            <div id="links">
+              <ul>
+                <li><a href="https://github.com/nsn/">Github - nsn</a> </li>
+                <li><a href="https://twitter.com/#!/pneis">Twitter - @pneis</a> </li>
+                <li><a href="http://stackoverflow.com/users/263698/nsn">stackoverflow - nsn</a> </li>
+              </ul>
+            </div>
+            <!-- latest blog posts -->
+            <div id="blogposts">
+              <h3>&rarr; latest blog posts</h3>
+              <ul>
+                <% 
+                   sorted_articles.slice(0..2).each do |a|
+                %>
+                  <li>
+                    <%= link_to(a[:title], a.reps[0].path) %>
+                  </li>
+                <%end%>
+              </ul>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+
     </div>
     <footer>
       Copyright © 2011 NightSpawN | powered by <a href="http://nanoc.stoneship.org/">nanoc</a>, <a href="http://jquery.com/">jQuery</a> and <a href="http://fancybox.net/">fancybox</a>
