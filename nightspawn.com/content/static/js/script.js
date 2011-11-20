@@ -21,6 +21,12 @@ $(".navlink").hover(
   }
 );
 
+$("nav").mouseleave(
+  function() {
+    showCurrentNavGray();
+  }
+);
+
 function showNavImage(name) {
   hideCurrentNavGray();
   sel = "#" + name + "-";
@@ -34,7 +40,6 @@ function hideNavImage(name) {
   $(sel + "gray").hide();
   $(sel + "color").hide();
   $("#nav_block-color").hide();
-  showCurrentNavGray();
 }
 
 function showCurrentNavGray() {
