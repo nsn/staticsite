@@ -2,6 +2,9 @@
 
 $(document).ready(function(){
 
+  // show current gray navimage
+  showCurrentNavGray();
+
   // fancybox
   $("a.gallerylink").fancybox();
 
@@ -19,6 +22,7 @@ $(".navlink").hover(
 );
 
 function showNavImage(name) {
+  hideCurrentNavGray();
   sel = "#" + name + "-";
   $(sel + "gray").show();
   $(sel + "color").show();
@@ -30,4 +34,13 @@ function hideNavImage(name) {
   $(sel + "gray").hide();
   $(sel + "color").hide();
   $("#nav_block-color").hide();
+  showCurrentNavGray();
+}
+
+function showCurrentNavGray() {
+  $("#nav_" + currentNav + "-gray").show();
+}
+
+function hideCurrentNavGray() {
+  $("#nav_" + currentNav + "-gray").hide();
 }

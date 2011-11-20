@@ -42,6 +42,13 @@
               id="nav_<%= name %>-color" 
               style="background-image: url(/images/<%= name %>-color.png);"></span>
       <% end %>
+      <script>
+        <% breadcrumbs_trail().each do |ti|
+           if ti[:nav]
+        %>
+          var currentNav="<%= ti[:title].downcase %>";
+        <% end end %>
+      </script>
       <div id="text">
         <header>
           <nav class="box">
