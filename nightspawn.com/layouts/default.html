@@ -98,10 +98,7 @@
                 @item[:tags].each do |t|
                 end
               %>
-              <div class="blogarticlefooter">
-                authored by nsn on <%= Time.parse(item[:created_at]).strftime("%Y-%d-%m") %>
-                tags: <%= @item[:tags].nil? ? '' : @item[:tags].join(', ') %>
-              </div>
+              <%= render('_blog_footer', :post => item) %>
             <% end %>
           </article>
 

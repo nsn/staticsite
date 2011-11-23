@@ -2,19 +2,7 @@
 ---
 <h1>Blog posts for tag "<%= tag %>"</h1>
 
-
-<% 
-  items.each do |i| 
-    next if i[:tags].nil?
-    i[:tags].each do |t|
-      if t == tag 
-%>
-
-    <%= i[:title] %>
-
-<% 
-      end
-    end
-  end 
-%>
+<% items_for_tag(tag).each do |i| %>
+  <%= render('_blog_abstract', :post => i) %>
+<% end %>
 

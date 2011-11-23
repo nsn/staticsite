@@ -28,15 +28,16 @@ def tag_set(items=nil)
 end
 
 def items_for_tag(tag)
-  tagitems = Array.new
+  tagitems = Set.new
   items.each do |i|
     next if i[:tags].nil?
-    i[:tags].each do |t| 
-      tagitems << t
-#      if tag == t 
-#        tagitems << i 
-#      end 
+    if !i[:tags].detect{|t| t == tag}.nil?
+      tagitems << i
     end
   end
+  tagitems.to_a
 end
 
+def item_for_id(id) 
+  items.detect{ |itm| itm[:identifier] == id }
+end
