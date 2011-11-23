@@ -93,7 +93,8 @@
             <br class="clearfix"/>
             <%= yield %>
             <% if item[:kind] == "article" %>
-              <% 
+              <%
+                tag_links = {}
                 @item[:tags].each do |t|
                 end
               %>

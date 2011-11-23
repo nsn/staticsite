@@ -18,6 +18,10 @@
 # don't do anything with static content
 #end
 
+preprocess do
+  create_tag_pages
+end
+
 route '/static/*' do
   # /static/foo.html/ → /foo.html
   item.identifier[7..-2] + '.' + item[:extension]
