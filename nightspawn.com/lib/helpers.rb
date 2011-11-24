@@ -8,7 +8,7 @@ def create_tag_pages
     item = Nanoc3::Item.new(
       #"= render('_tag_page', :tag => '#{tag}')",           # use locals to pass data
       render('_tag_page', :tag => tag),           # use locals to pass data
-      { :title => "Category: #{tag}", :is_hidden => true}, # do not include in sitemap.xml
+      { :title => "tag: #{tag}", :hidden => true}, # do not include in aside
       "/rants/tags/#{tag}/",                               # identifier
       :binary => false
     )

@@ -1,6 +1,7 @@
 --- 
 title: tags
 hideaside: true
+hidden: true
 ---
 
 
