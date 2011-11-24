@@ -91,13 +91,15 @@
           <article class="box <%= width %>">
             <%= link_to("&larr; back to " + item.parent[:title], item.parent.reps[0].path, :class => "backLink") %> 
             <br class="clearfix"/>
-            <%= yield %>
-            <% if item[:kind] == "article" %>
-              <%
-                tag_links = {}
-                @item[:tags].each do |t|
-                end
-              %>
+              <h1><%= item[:title].capitalize %></h1>
+              <p class="abstract"><%= item[:abstract] %></p>
+              <%= yield %>
+              <% if item[:kind] == "article" %>
+                <%
+                  tag_links = {}
+                  @item[:tags].each do |t|
+                  end
+                %>
               <%= render('_blog_footer', :post => item) %>
             <% end %>
           </article>

@@ -2,13 +2,9 @@
 title: about
 nav: true
 navindex: 10
+abstract: Some information about me and this website
 ---
 
-
-About
-=====
-
-Some information about me and this website:
 
 /me
 ---

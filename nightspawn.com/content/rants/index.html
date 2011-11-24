@@ -2,13 +2,8 @@
 title: Rants
 nav: true
 navindex: 100
+abstract: this is were I rant
 ---
-
-<h1>Rants</h1>
-
-this is were I rant
-
-<br/>
 
 <% @item.children.find_all{ |itm| !itm[:hidden]}.each do |c| %>
    <%= c[:title] %>
