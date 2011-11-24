@@ -41,3 +41,9 @@ end
 def item_for_id(id) 
   items.detect{ |itm| itm[:identifier] == id }
 end
+
+# Copy static assets outside of content instead of having nanoc3 process them.
+def copy_static
+  FileUtils.cp_r 'static/.', 'output/'
+end
+

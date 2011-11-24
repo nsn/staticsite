@@ -19,6 +19,7 @@
 #end
 
 preprocess do
+  copy_static
   create_tag_pages
 end
 
