@@ -1,8 +1,7 @@
 ---
 ---
-<h2><%= post[:title] %></h2>
-<h2><%= post.reps[0].class %></h2>
+<h2><%= link_to(post[:title], post) %></h2>
 
-<p><%= post[:abstract] %></p>
+<p><%= post[:abstract] %> <%= link_to("&rarr; read more...", post) %></p>
 <%= render('_blog_footer', :post => post) %>
 

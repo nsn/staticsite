@@ -1,6 +1,5 @@
 ---
 ---
-<h1>Blog posts for tag "<%= tag %>"</h1>
 
 <% items_for_tag(tag).each do |i| %>
   <%= render('_blog_abstract', :post => i) %>

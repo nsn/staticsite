@@ -6,9 +6,8 @@ include Nanoc3::Helpers::Rendering
 def create_tag_pages
   tag_set(items).each do |tag|
     item = Nanoc3::Item.new(
-      #"= render('_tag_page', :tag => '#{tag}')",           # use locals to pass data
-      render('_tag_page', :tag => tag),           # use locals to pass data
-      { :title => "tag: #{tag}", :hidden => true}, # do not include in aside
+      "<%= render('_tag_page', :tag => '#{tag}') %>",      # use locals to pass data
+      { :title => "rants tagged with \"#{tag}\"", :hidden => true},         # do not include in aside
       "/rants/tags/#{tag}/",                               # identifier
       :binary => false
     )
