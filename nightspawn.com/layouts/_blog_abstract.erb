@@ -1,6 +1,7 @@
 ---
 ---
 <h2><%= post[:title] %></h2>
+<h2><%= post.reps[0].class %></h2>
 
 <p><%= post[:abstract] %></p>
 <%= render('_blog_footer', :post => post) %>
