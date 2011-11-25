@@ -238,8 +238,12 @@ article {
   padding: 10px 10px 10px 10px;
 }
 
+.picasaAlbum {
+  text-align: center;
+}
+
 .picasaimg {
-  margin: 10px;
+  margin: 5px;
 }
 
 .abstract {

@@ -75,7 +75,7 @@ function hideCurrentNavGray() {
           a.attr("href", pic.media$group.media$content[0].url);
           a.attr("class", "picasalink");
           a.attr("rel", rel);
-          a.attr("alt", pic.summary.$t);
+          a.attr("title", pic.summary.$t);
           a.append(img);
 
           dom.append(a);
