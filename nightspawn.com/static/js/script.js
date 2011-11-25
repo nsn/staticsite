@@ -9,6 +9,7 @@ $(document).ready(function(){
   $(".picasaAlbum").picasaAlbum();
 
   // fancybox
+  //$(document).on("click", "a.gallerylink", );
   $("a.gallerylink").fancybox();
 
 });
@@ -56,6 +57,7 @@ function hideCurrentNavGray() {
 
   $.fn.picasaAlbum = function(options) {
     var albumID = this.attr("data-albumid");
+    var rel = "picasa_" + albumID;
 
     var dom = $(this);
 
@@ -71,14 +73,18 @@ function hideCurrentNavGray() {
 
           var a = $("<a/>");
           a.attr("href", pic.media$group.media$content[0].url);
-          a.attr("class", "gallerylink");
-          a.attr("rel", "picasa_" + albumID);
+          a.attr("class", "picasalink");
+          a.attr("rel", rel);
           a.attr("alt", pic.summary.$t);
           a.append(img);
 
           dom.append(a);
+
         }
+        console.log("penis " + $("a.picasalink[rel="+rel+"]").length);
+        $("a.picasalink[rel="+rel+"]").fancybox();
       });
+
 
   };
 

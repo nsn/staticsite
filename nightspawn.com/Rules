@@ -23,23 +23,6 @@ preprocess do
   create_tag_pages
 end
 
-compile '/travels/20.*/.+' do
-end
-
-route '/travels/20.*/.+' do
-  item.identifier.chop + '.' + item[:extension]
-end
-
-#create thumbnail representation
-compile '/travels/20.*/.+', :rep => :thumbnail do
-  filter :thumbnailize, :width => 200
-end
-
-#route thumbnails
-route '/travels/20.*/.+', :rep => :thumbnail do
-  item.identifier.chop + '-thumbnail.' + item[:extension]
-end
-
 compile '/stylesheet/' do
   # don't filter or layout
 end
