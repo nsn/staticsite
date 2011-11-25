@@ -6,7 +6,7 @@ $(document).ready(function(){
   showCurrentNavGray();
 
   // render any picasa streams
-  $(".picasaStream").picasaAlbum();
+  $(".picasaAlbum").picasaAlbum();
 
   // fancybox
   $("a.gallerylink").fancybox();

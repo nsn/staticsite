@@ -1,18 +1,7 @@
 --- 
 title: Hongkong/Macao 2009
 hideaside: true
+abstract: In october of 2009 we spent 12 days in Hongkong and even managed to visit Macao for a day. What a beautiful city, we had a great time there.
 ---
 
-<h1><%= @item[:title] %></h1>
-
-<p>
-In october of 2009 we spent 12 days in Hongkong and even managed to visit Macao for a day. 
-What a beautiful city, we had a great time there.
-</p>
-
-
-<% @item.children.each do |img| %>
-  <a href="<%= img.path %>" rel="travelpics" class="gallerylink"><img src="<%= img.path(:rep => :thumbnail) %>"/></a>
-<% end %>
-
-<div class="picasaStream" data-albumid="5418565880143347489"></div>
+<div class="picasaAlbum" data-albumid="5418565880143347489"></div>
