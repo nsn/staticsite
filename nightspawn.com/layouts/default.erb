@@ -75,10 +75,11 @@
 
         <% if renderAside %>
           <aside class="box">
+            <h2><%= item[:title] %></h2>
             <ul>
             <% @item.children.find_all{ |itm| !itm[:hidden]}.each do |c|  %>
               <li>
-                <%= link_to(c[:title], c.reps[0].path) %>
+                <%= link_to("&rarr;" + c[:title], c.reps[0].path) %>
               </li>
             <%end%>
             <li>
@@ -95,11 +96,6 @@
               <p class="abstract"><%= item[:abstract] %></p>
               <%= yield %>
               <% if item[:kind] == "article" %>
-                <%
-                  tag_links = {}
-                  @item[:tags].each do |t|
-                  end
-                %>
               <%= render('_blog_footer', :post => item) %>
               <%= render('_disqus', :item => item) %>
             <% end %>
