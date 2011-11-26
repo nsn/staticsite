@@ -26,6 +26,8 @@
     <div id="content" style="background-image: url(/images/<%= 'background.jpg' %>)">
       <% 
          navItems = @site.items.find_all{ |itm| itm[:nav] }.sort_by{ |itm| itm[:navindex] }
+         breadcrumbs_trail().length == 1 ? currentNavItem = breadcrumbs_trail()[0] : currentNavItem = breadcrumbs_trail()[1]
+         currentNavItemName = currentNavItem[:title].downcase;
       %>
       <!-- section images -->
       <span class="nav-image" 
@@ -43,11 +45,7 @@
               style="background-image: url(/images/<%= name %>-color.png);"></span>
       <% end %>
       <script>
-        <% breadcrumbs_trail().each do |ti|
-           if ti[:nav]
-        %>
-          var currentNav="<%= ti[:title].downcase %>";
-        <% end end %>
+        var currentNav="<%= currentNavItemName %>";
       </script>
       <div id="text">
         <header>
@@ -57,8 +55,10 @@
                navItems.each do |i| 
             %>
               <li>
-              <% if i[:nav] %>
-               <%= link_to(i[:title].capitalize, i.reps[0].path, :class => 'navlink', :id => 'nav_'+i[:title].downcase) %>
+              <% if i[:nav] 
+                 navlinkclass = 'navlink'
+                 navlinkclass << ' navhighlight' if i[:title].downcase == currentNavItemName %>
+                <%= link_to(i[:title].capitalize, i.reps[0].path, :class => navlinkclass, :id => 'nav_'+i[:title].downcase) %>
               <% end %>
               </li>
             <%end%>

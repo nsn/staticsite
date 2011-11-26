@@ -199,6 +199,11 @@ nav ul li :hover {
     background-color: #f0f0f0;
 }
 
+.navhighlight {
+    box-shadow: 0px 0px 30px 7px #ffffff; /* Opera 10.5, IE9, Chrome 10+ */
+    background-color: #f0f0f0;
+}
+
 nav a, nav a:hover {
 	padding: 0px 20px 0px 20px;
 	text-decoration:none;
