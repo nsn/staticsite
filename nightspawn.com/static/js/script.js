@@ -63,7 +63,7 @@ function hideCurrentNavGray() {
 
     var dom = $(this);
 
-    $.getJSON("https://picasaweb.google.com/data/feed/api/user/nightspawn.com/albumid/" + albumID + "?kind=photo&access=public&alt=json&thumbsize=220c", 'callback=?',
+    $.getJSON("https://picasaweb.google.com/data/feed/api/user/108363071077152262865/albumid/" + albumID + "?kind=photo&access=public&alt=json&thumbsize=220c", 'callback=?',
       function(data){
         for (var i = 0; i < data.feed.entry.length; i++) {
           var pic = data.feed.entry[i];
