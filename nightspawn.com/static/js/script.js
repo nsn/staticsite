@@ -9,9 +9,11 @@ $(document).ready(function(){
   $(".picasaAlbum").picasaAlbum();
 
   // fancybox
-  //$(document).on("click", "a.gallerylink", );
   $("a.gallerylink").fancybox();
 
+
+  // syntaxhighlighter
+  SyntaxHighlighter.all()
 });
 
 
