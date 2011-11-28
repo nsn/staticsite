@@ -66,7 +66,7 @@ As `EnvironmentAlternative` is an alternative stereotype `MockupFoo` is now choo
 Not exactly what we wanted, but there's something we can do about that: ever heard of CDI extensions? They are a way to extend CDI (duh) by observing CDI lifecycle events. Writing one
 is quite easy, just extend the `Extension` interface:
 
-<pre class="brush: java">
+<script type="syntaxhighlighter" class="brush: java"><![CDATA[
 public class EnvironmentAlternativesExtension implements Extension {
     private EnvironmentType currentEnv = PRODUCTION;
 
@@ -88,7 +88,7 @@ public class EnvironmentAlternativesExtension implements Extension {
         return false;
     }
 }
-</pre>
+]]></script>
 
 The extension itself is not very complicated: the `processAnotated` method gets called for each annotated type the container processes, and if it is annotated as `@EnvironmentAlternative`
 *AND* the current environemnt is *NOT* in the specified environments we call the event's `veto()` method, this prevents the type from being processed any further. Easy! The only thing left
