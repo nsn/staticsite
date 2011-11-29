@@ -262,6 +262,14 @@ article {
   text-align: right;
 }
 
+.pagerprev {
+  float: left;
+}
+
+.pagernext {
+  float: right;
+}
+
 .backLink {
   float: right;
 }

@@ -100,9 +100,9 @@
               <p class="abstract"><%= item[:abstract] %></p>
               <%= yield %>
               <% if item[:kind] == "article" %>
-              <%= render('_blog_footer', :post => item) %>
-              <%= render('_disqus', :item => item) %>
-            <% end %>
+                <%= render('_blog_footer', :post => item) %>
+                <%= render('_disqus', :item => item) %>
+              <% end %>
           </article>
           <!-- sidebar -->
           <%= render('_sidebar') %>
