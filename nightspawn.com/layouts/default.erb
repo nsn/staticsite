@@ -101,6 +101,7 @@
               <%= yield %>
               <% if item[:kind] == "article" %>
                 <%= render('_blog_footer', :post => item) %>
+                <%= render('_blog_pager', :post => item) %>
                 <%= render('_disqus', :item => item) %>
               <% end %>
           </article>

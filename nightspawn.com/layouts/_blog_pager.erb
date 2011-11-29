@@ -1,0 +1,16 @@
+---
+---
+<% index = sorted_articles.find_index(post) %> 
+<div class="pager">
+  <% if index > 0 
+        prevart = sorted_articles[index-1] %>
+        <span class="pagerprev"><%= link_to("&lt;&lt; " + prevart[:title], prevart)%></span>
+  <% end %>
+  <% if index < sorted_articles.length-1 
+        nextart = sorted_articles[index+1]%>
+        <span class="pagernext"><%= link_to(nextart[:title] + " &gt;&gt;", nextart)%></span>
+  <% end %>
+</div>
+<br class="clearfix"/>
+
+
