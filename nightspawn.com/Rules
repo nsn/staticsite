@@ -21,6 +21,7 @@
 preprocess do
   copy_static
   create_tag_pages
+  create_archive_pages
 end
 
 compile '/stylesheet/' do

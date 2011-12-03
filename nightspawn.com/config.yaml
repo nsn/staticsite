@@ -46,7 +46,7 @@ data_sources:
       allow_periods_in_identifiers: true
 
      
-e rsync + ssh for live site. To deploy:
+#use rsync + ssh for live site. To deploy:
 #
 #   % rake deploy:rsync
 deploy:
@@ -56,3 +56,5 @@ deploy:
 
 
 base_url: http://nightspawn.com
+
+page_size: 5

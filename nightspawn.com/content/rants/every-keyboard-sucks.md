@@ -1,6 +1,6 @@
 -----
   kind: article
-  created_at: 2011-11-15 15:12:22
+  created_at: 2011-11-01 15:12:22
   tags:
   - hardware
   title: "every keyboard sucks"

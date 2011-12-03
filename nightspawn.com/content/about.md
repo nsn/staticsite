@@ -15,11 +15,11 @@ I currently work as a software engineer at [Gameforge AG](http://corporate.gamef
 JEE applications for large MMORPGs. Former employers include [1&1](httt://einsundeins.com) and Schlund+Partner (RIP).
 I have a degree in Computer Sciences from the [university of applied science, Karlsruhe](http://hs-karlsruhe.de/).
 
-My hobbies include:
+I like wasting my time with
 
 -   coding - as of late I developed an unhealthy fascination with JEE
 -   snowboarding (unfortunately not as much as a want to anymore)
--   traveling (envy my pictures!)
+-   traveling <a href="/travels/">(envy my pictures!)</a>
 -   retro gaming (I consider myself to be the best puzzle bobble player in the world)
 -   foosball (table soccer - whatever)
 
@@ -33,7 +33,7 @@ I thought it was about time to update my personal web page, so here it is: the a
 After several tries using various website generators (even writing my own) and the PHP desaster that was the last version
 this time I decided to use [nanoc](http://nanoc.stoneship.org/ "nanoc homepage") - a static website generator.
 
-So far the experience has been great, nanoc allows authoring of content in a plethora of formats, including HTML, Ruby, erb and 
+So far the experience has been great, nanoc allows authoring of content in a plethora of formats, including HTML, Ruby and 
 most notably [markdown](http://daringfireball.net/projects/markdown/ "markdown"). Nanoc outputs plain HTML files which can be hosted
 almost anywhere, absolutely no server side code needed - no more having to constantly proof against spammers and hackers and best of all: 
 no more PHP!

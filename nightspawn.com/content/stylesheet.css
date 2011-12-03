@@ -251,6 +251,11 @@ article {
   margin: 5px;
 }
 
+#rssfloat {
+  float: right;
+  margin-top: 20px;
+}
+
 .abstract {
   font-weight: bold;
   font-size: 115%;

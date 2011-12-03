@@ -1,0 +1,25 @@
+--- 
+title: Rants
+nav: true
+navindex: 100
+abstract: this is were I rant
+hideaside: true
+---
+
+
+<% 
+  index_articles = sorted_articles
+  index_articles.slice(0..@config[:page_size]-1).each do |a|
+%>
+  <%= render('_blog_abstract', :post => a) %>
+<% end %>
+
+<% 
+  if archive_items.length > 0
+%> 
+<div class="pager">                     
+  <span class="pagernext"><%= link_to("archives &gt;&gt;", archive_page(0))%></span>
+</div>
+<br class="clearfix"/>
+ 
+<% end %>

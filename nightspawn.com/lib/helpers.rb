@@ -3,6 +3,38 @@ include Nanoc3::Helpers::LinkTo
 include Nanoc3::Helpers::Blogging
 include Nanoc3::Helpers::Rendering
 
+def create_archive_pages
+  article_groups().each_with_index do |subarticles, i|
+    first = (i+1)*config[:page_size] + 1
+    last  = (i+2)*config[:page_size]
+
+    @items << Nanoc3::Item.new(
+      "<%= render('_blog_archive', :index => #{i}) %>",
+      { :title => "Rants archive page #{i+1}", :rantarchive => true, :abstract => "(posts #{first} to #{last})"},
+      archive_page(i),
+      :binary => false
+    )
+  end 
+end
+
+def article_groups 
+  articles_to_paginate = sorted_articles
+  articles_to_paginate.slice!(0..@config[:page_size]-1);
+  article_groups = []
+  until articles_to_paginate.empty?
+    article_groups << articles_to_paginate.slice!(0..@config[:page_size]-1)
+  end
+  article_groups.to_a
+end
+
+def archive_page(index) 
+  "/rants/#{index}/"
+end
+
+def archive_items
+  @items.find_all{ |itm| itm[:rantarchive] }
+end
+
 def create_tag_pages
   tag_set(items).each do |tag|
     item = Nanoc3::Item.new(

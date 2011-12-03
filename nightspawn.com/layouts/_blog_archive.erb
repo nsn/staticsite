@@ -1,0 +1,20 @@
+---
+---
+
+<% article_groups()[index].each do |a| %>
+  <%= render('_blog_abstract', :post => a) %>
+<% end %>
+
+<div class="pager">
+  <% if index == 0 %>
+        <span class="pagerprev"><%= link_to("&lt;&lt; newer", "/rants/")%></span>
+  <% end %>
+  <% if index > 0 %>
+        <span class="pagerprev"><%= link_to("&lt;&lt; newer", archive_page(index-1))%></span>
+  <% end %>
+  <% if index < article_groups.length-1 %>
+        <span class="pagernext"><%= link_to("older &gt;&gt;", archive_page(index+1))%></span>
+  <% end %>
+</div>
+<br class="clearfix"/>
+
