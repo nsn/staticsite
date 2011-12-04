@@ -6,6 +6,7 @@ $(document).ready(function(){
   showCurrentNavGray();
 
   // render any picasa streams
+  fetchAlbums();
   $(".picasaAlbum").picasaAlbum();
 
   // fancybox
@@ -92,3 +93,46 @@ function hideCurrentNavGray() {
 
 }) (jQuery);
 
+(function($) {
+
+  $.fn.picasaAlbumTeaser = function(data) {
+    var albumID = this.attr("data-albumid");
+
+    //    var album = $.picasAlbums.feed.entry
+    console.log("ficken : " + albumID + " " + data.feed.entry.length);
+    for (var j = 0; j < data.feed.entry.length; j++) {
+      if (data.feed.entry[j].gphoto$id.$t == albumID) {
+        alb = data.feed.entry[j];
+
+        var img = $("<img/>");
+        img.attr("class", "picasaimg");
+        img.attr("src", alb.media$group.media$thumbnail[0].url);
+      
+        $(this).append(img); 
+      }
+    }
+
+  };
+
+}) (jQuery);
+
+function fetchAlbums() {
+  $.getJSON("https://picasaweb.google.com/data/feed/api/user/108363071077152262865/?kind=album&access=public&alt=json&thumbsize=220c", 'callback=?',
+    function(data){
+      //$(".picasaAlbumTeaser").picasaAlbumTeaser(data);
+      for (var i =0; i < $(".picasaAlbumTeaser").length; i++) {
+        $($(".picasaAlbumTeaser")[i]).picasaAlbumTeaser(data);
+      }
+      /*
+      for (var i =0; i < $(".picasaAlbumTeaser").length; i++) {
+        var albumID = $(".picasaAlbumTeaser")[i].getAttribute("data-albumid");
+        for (var j = 0; j < data.feed.entry.length; j++) {
+          if (data.feed.entry[j].gphoto$id.$t == albumID) {
+            pic = data.feed.entry[j].media$group.media$thumbnail[0].url;
+            $(".picasaAlbumTeaser")[i].appendChild("ficken");
+          }
+        }
+      }
+      */
+    });
+}

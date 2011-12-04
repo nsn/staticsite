@@ -4,9 +4,13 @@ nav: true
 navindex: 90
 abstract: records of my travels - envy my pictures!
 ---
-
+<p>
 I recently (re)discovered my love for traveling, I guess I have to thank acida for that...
 However - I try to spend some time abroad at least once a year, so here are a few pictures.
+</p>
 
+<% @item.children.find_all{|c| c[:picasaAlbumID]}.each do |child| %>
+  <%= link_to('', child, { :"data-albumid" => child[:picasaAlbumID] , :class => "picasaAlbumTeaser", :title => child[:title]}) %>
+<% end %>
 
 

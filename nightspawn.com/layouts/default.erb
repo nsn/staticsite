@@ -107,6 +107,9 @@
                 <%= render('_blog_pager', :post => item) %>
                 <%= render('_disqus', :item => item) %>
               <% end %>
+              <% if item[:picasaAlbumID] %>
+                <div class="picasaAlbum" data-albumid="<%= item[:picasaAlbumID] %>"></div>
+              <% end %>
           </article>
           <!-- sidebar -->
           <%= render('_sidebar') %>
