@@ -4,12 +4,17 @@
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> 
+<% 
+   navItems = @site.items.find_all{ |itm| itm[:nav] }.sort_by{ |itm| itm[:navindex] }
+   breadcrumbs_trail().length == 1 ? currentNavItem = breadcrumbs_trail()[0] : currentNavItem = breadcrumbs_trail()[1]
+   currentNavItemName = currentNavItem[:title].downcase;
+%>
 <html lang="en" class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     
-    <title></title>
+    <title>NightSpawN - <%= currentNavItemName.capitalize %> - <%= item[:title] %></title>
     <meta name="description" content="">
     <meta name="author" content="">
     
@@ -28,11 +33,6 @@
   </head>
   <body>
     <div id="content" style="background-image: url(/images/<%= 'background.jpg' %>)">
-      <% 
-         navItems = @site.items.find_all{ |itm| itm[:nav] }.sort_by{ |itm| itm[:navindex] }
-         breadcrumbs_trail().length == 1 ? currentNavItem = breadcrumbs_trail()[0] : currentNavItem = breadcrumbs_trail()[1]
-         currentNavItemName = currentNavItem[:title].downcase;
-      %>
       <!-- section images -->
       <span class="nav-image" 
             id="nav_block-color" 
