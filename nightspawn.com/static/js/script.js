@@ -119,20 +119,8 @@ function hideCurrentNavGray() {
 function fetchAlbums() {
   $.getJSON("https://picasaweb.google.com/data/feed/api/user/108363071077152262865/?kind=album&access=public&alt=json&thumbsize=220c", 'callback=?',
     function(data){
-      //$(".picasaAlbumTeaser").picasaAlbumTeaser(data);
       for (var i =0; i < $(".picasaAlbumTeaser").length; i++) {
         $($(".picasaAlbumTeaser")[i]).picasaAlbumTeaser(data);
       }
-      /*
-      for (var i =0; i < $(".picasaAlbumTeaser").length; i++) {
-        var albumID = $(".picasaAlbumTeaser")[i].getAttribute("data-albumid");
-        for (var j = 0; j < data.feed.entry.length; j++) {
-          if (data.feed.entry[j].gphoto$id.$t == albumID) {
-            pic = data.feed.entry[j].media$group.media$thumbnail[0].url;
-            $(".picasaAlbumTeaser")[i].appendChild("ficken");
-          }
-        }
-      }
-      */
     });
 }

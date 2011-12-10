@@ -97,7 +97,7 @@
             <%= link_to("&larr; back to " + item.parent[:title], item.parent.reps[0].path, :class => "backLink") %> 
             <br class="clearfix"/>
               <% if !breadcrumbs_trail().index{|i| i.identifier == "/rants/"}.nil? %>
-                <div id="rssfloat"><a href="/rants/feed.xml"><img src="/images/feed-icon-28x28.png"/></a></div>
+                <div id="rssfloat"><a href="/rants/feed.xml"><img src="/images/feed-icon-28x28.png" alt="RSS feed" title="RSS feed"/></a></div>
               <% end %>
               <h1><%= item[:title] %></h1>
               <p class="abstract"><%= item[:abstract] %></p>
