@@ -2,9 +2,6 @@
 title: Turpitude/Thesis
 ---
 
-Turpitude/Thesis
-================
-
 My diploma thesis/final year project was written while working at [1&1](http://einsundeins.com) and
 consisted of a library that allows users to execute PHP-Code whithin a Java Virtual machine.
 It is basically an implementation of [JSR 223](http://jcp.org/en/jsr/detail?id=223), although I never

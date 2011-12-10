@@ -2,9 +2,6 @@
 title: WireFX
 ---
 
-WireFX
-======
-
 WireFX is my own version of a shitty game framework. It is neither better designed nor
 faster nor in any way better than all the others out there.
 

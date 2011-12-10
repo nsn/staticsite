@@ -2,9 +2,6 @@
 title: WebKnot
 ---
 
-WebKnot
-=======
-
 After having tried several website authoring tools I decided that I needed something
 more powerful than a simple WYSIWYG editor, and since I was unable to find anyting that 
 suited my needs I decided to write my own (always a huge mistake).

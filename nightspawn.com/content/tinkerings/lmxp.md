@@ -2,9 +2,6 @@
 title: LMXP
 ---
 
-LMXP
-====
-
 LMXP is an XML-Parser completely written in Java. 
 I won't tell you what the acronym stands for - go figure. I wrote this because all the 
 other free XML parsers I found out there were huge and therefore damn slow. 

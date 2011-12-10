@@ -1,9 +1,6 @@
 --- 
-title: GLtut
+title: (J)GLtut
 ---
-
-(J)GLtut
-========
 
 This is a tutorial I wrote for [one of my professors](http://www.dirkwhoffmann.de/) so he didn't have
 to use DirectX to teach shaders any more.
