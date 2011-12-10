@@ -2,6 +2,7 @@
   kind: article
   created_at: 2011-11-07 13:32:51
   tags:
+  - programming
   - jee
   - java
   - cdi
