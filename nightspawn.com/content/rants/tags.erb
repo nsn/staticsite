@@ -1,0 +1,17 @@
+--- 
+title: Tags
+hideaside: true
+hidden: true
+---
+
+<%
+  counter = Hash.new
+  tag_set.each do |t|
+    counter[t] = items_for_tag(t).length
+  end
+
+  counter.keys.each do |k|
+%>
+  <span class="tagcloud" style="font-size: <%= 100+counter[k]*100 %>%"><%= link_to(k, "/rants/tags/"+k+"/") %></span>
+<% end %>
+

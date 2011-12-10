@@ -247,6 +247,10 @@ article {
   text-align: center;
 }
 
+.tagcloud {
+  margin: 5px;
+}
+
 .picasaimg {
   margin: 5px;
 }
