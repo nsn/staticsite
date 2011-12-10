@@ -15,4 +15,8 @@ no more PHP!
 
 The only downside so far has been the fact that I had to learn some basic ruby in oder to be able to add custom functionality - oh well...
 
+Tools used to create this site:
+  * [nanoc - static website generator](http://nanoc.stoneship.org/ "nanoc homepage")
+  * [Jquery](http://jquery.com/ "jQuery homepage")
+
 the old site can still be accessed here: [http://old.nightspawn.com](http://old.nightspawn.com)
