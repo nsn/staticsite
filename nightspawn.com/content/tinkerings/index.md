@@ -5,7 +5,7 @@ navindex: 20
 abstract: I seem to have too much time...
 ---
 
-this is most of the stuff I put together until today, and since it seems
-as if everybody releases their pathetic little projects to the public... here we go.
-
+these gems are most of the pathetic little projects I put together during those boring
+sunday afternoons. Most of them are unfinished, and none has anything to do with my current
+or any of my former employers.
 
