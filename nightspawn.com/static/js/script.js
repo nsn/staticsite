@@ -9,6 +9,8 @@ $(document).ready(function(){
   fetchAlbums();
   $(".picasaAlbum").picasaAlbum();
 
+  $(".twitpicstream").twitpicStream();
+
   // fancybox
   $("a.gallerylink").fancybox();
 
@@ -60,6 +62,8 @@ function hideCurrentNavGray() {
 
   $.fn.picasaAlbum = function(options) {
     var albumID = this.attr("data-albumid");
+    if (albumID === undefined)
+      return;
     var rel = "picasa_" + albumID;
 
     var dom = $(this);
@@ -99,7 +103,7 @@ function hideCurrentNavGray() {
     var albumID = this.attr("data-albumid");
 
     //    var album = $.picasAlbums.feed.entry
-    console.log("ficken : " + albumID + " " + data.feed.entry.length);
+    //console.log("ficken : " + albumID + " " + data.feed.entry.length);
     for (var j = 0; j < data.feed.entry.length; j++) {
       if (data.feed.entry[j].gphoto$id.$t == albumID) {
         alb = data.feed.entry[j];
@@ -124,3 +128,47 @@ function fetchAlbums() {
       }
     });
 }
+
+
+(function($) {
+
+  $.fn.twitpicStream = function(options) {
+    var user = this.attr("data-user");
+    if (user === undefined)
+      return;
+
+  console.log("start");
+
+    $.get(
+        'http://api.twitpic.com/2/users/show.json?username=pneis',
+        function(data){
+          console.log("ficken " + data);
+        });
+
+/*
+    console.log("asdf " + user);
+    //var dom = $(this);
+    $.ajax({
+      url: "http://api.twitpic.com/2/users/show.json?username=pneis&callback=?",
+      dataType: 'text',
+      error: function(jqXHR, textStatus, errorThrown) {
+        jqXHR.done();
+        console.log("error " + textStatus + " -> " + errorThrown);
+      },
+      success: function(data) {
+        console.log("fnord!!");
+      },
+    });
+*/
+ /*
+    $.getJSON("http://api.twitpic.com/2/users/show.json?username=pneis", 'callback=?', function(data) {
+      console.log("penis " + data.images.length);
+      for (var i = 0; i < data.images.length; i++) {
+        var pic = data.images[i];
+        console.log("asdf " + pic.short_id);
+      }
+    });
+ */
+  };
+
+}) (jQuery);
