@@ -10,7 +10,11 @@ However - I try to spend some time abroad at least once a year, so here are a fe
 </p>
 
 <% @item.children.find_all{|c| c[:picasaAlbumID]}.each do |child| %>
-  <%= link_to('', child, { :"data-albumid" => child[:picasaAlbumID] , :class => "picasaAlbumTeaser", :title => child[:title]}) %>
+  <%= link_to('', child, { 
+    :"data-albumid" => child[:picasaAlbumID],   
+    :"data-userid" => "108363071077152262865",   
+    :class => "picasaAlbumTeaser", 
+    :title => child[:title]}) %>
 <% end %>
 
 

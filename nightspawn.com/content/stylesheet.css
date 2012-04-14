@@ -166,11 +166,11 @@ a:hover {
 }
 
 .wide {
-  width: 1005px;
+  width: 985px;
 }
 
 .narrow {
-  width: 760px;
+  width: 740px;
 }
 
 .box {
@@ -240,7 +240,7 @@ aside{
 
 article {
   float:left;
-  padding: 10px 10px 10px 10px;
+  padding: 20px 20px 20px 20px;
 }
 
 .picasaAlbum {

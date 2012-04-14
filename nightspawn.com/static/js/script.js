@@ -6,14 +6,20 @@ $(document).ready(function(){
   showCurrentNavGray();
 
   // render any picasa streams
-  fetchAlbums();
-  $(".picasaAlbum").picasaAlbum();
+  $(".picasaAlbum").picasaAlbum({
+    "thumbsize" : "220c",
+    "imageStyleClass" : "picasaimg",
+    "linkStyleClass" : "picasaAlbumLink",
+    "callback"  : function(elements) {
+      $(".picasaAlbumLink").fancybox();
+    }
+  });
+  $(".picasaAlbumTeaser").picasaTeaser({
+    "thumbsize" : "220c",
+    "imageStyleClass" : "picasaimg"
+  });
 
-  $(".twitpicstream").twitpicStream();
-
-  // fancybox
-  $("a.gallerylink").fancybox();
-
+  $(".twitpicstream").twitpicUserGallery({"imageStyleClass" : "picasaimg"});
 
   // syntaxhighlighter
   SyntaxHighlighter.all()
@@ -58,117 +64,4 @@ function hideCurrentNavGray() {
   $("#nav_" + currentNav + "-gray").hide();
 }
 
-(function($) {
 
-  $.fn.picasaAlbum = function(options) {
-    var albumID = this.attr("data-albumid");
-    if (albumID === undefined)
-      return;
-    var rel = "picasa_" + albumID;
-
-    var dom = $(this);
-
-    $.getJSON("https://picasaweb.google.com/data/feed/api/user/108363071077152262865/albumid/" + albumID + "?kind=photo&access=public&alt=json&thumbsize=220c", 'callback=?',
-      function(data){
-        for (var i = 0; i < data.feed.entry.length; i++) {
-          var pic = data.feed.entry[i];
-
-          var img = $("<img/>");
-          img.attr("class", "picasaimg");
-          img.attr("alt", pic.summary.$t);
-          img.attr("src", pic.media$group.media$thumbnail[0].url);
-
-          var a = $("<a/>");
-          a.attr("href", pic.media$group.media$content[0].url);
-          a.attr("class", "picasalink");
-          a.attr("rel", rel);
-          a.attr("title", pic.summary.$t);
-          a.append(img);
-
-          dom.append(a);
-
-        }
-        console.log("penis " + $("a.picasalink[rel="+rel+"]").length);
-        $("a.picasalink[rel="+rel+"]").fancybox();
-      });
-
-
-  };
-
-}) (jQuery);
-
-(function($) {
-
-  $.fn.picasaAlbumTeaser = function(data) {
-    var albumID = this.attr("data-albumid");
-
-    //    var album = $.picasAlbums.feed.entry
-    //console.log("ficken : " + albumID + " " + data.feed.entry.length);
-    for (var j = 0; j < data.feed.entry.length; j++) {
-      if (data.feed.entry[j].gphoto$id.$t == albumID) {
-        alb = data.feed.entry[j];
-
-        var img = $("<img/>");
-        img.attr("class", "picasaimg");
-        img.attr("src", alb.media$group.media$thumbnail[0].url);
-      
-        $(this).append(img); 
-      }
-    }
-
-  };
-
-}) (jQuery);
-
-function fetchAlbums() {
-  $.getJSON("https://picasaweb.google.com/data/feed/api/user/108363071077152262865/?kind=album&access=public&alt=json&thumbsize=220c", 'callback=?',
-    function(data){
-      for (var i =0; i < $(".picasaAlbumTeaser").length; i++) {
-        $($(".picasaAlbumTeaser")[i]).picasaAlbumTeaser(data);
-      }
-    });
-}
-
-
-(function($) {
-
-  $.fn.twitpicStream = function(options) {
-    var user = this.attr("data-user");
-    if (user === undefined)
-      return;
-
-  console.log("start");
-
-    $.get(
-        'http://api.twitpic.com/2/users/show.json?username=pneis',
-        function(data){
-          console.log("ficken " + data);
-        });
-
-/*
-    console.log("asdf " + user);
-    //var dom = $(this);
-    $.ajax({
-      url: "http://api.twitpic.com/2/users/show.json?username=pneis&callback=?",
-      dataType: 'text',
-      error: function(jqXHR, textStatus, errorThrown) {
-        jqXHR.done();
-        console.log("error " + textStatus + " -> " + errorThrown);
-      },
-      success: function(data) {
-        console.log("fnord!!");
-      },
-    });
-*/
- /*
-    $.getJSON("http://api.twitpic.com/2/users/show.json?username=pneis", 'callback=?', function(data) {
-      console.log("penis " + data.images.length);
-      for (var i = 0; i < data.images.length; i++) {
-        var pic = data.images[i];
-        console.log("asdf " + pic.short_id);
-      }
-    });
- */
-  };
-
-}) (jQuery);
