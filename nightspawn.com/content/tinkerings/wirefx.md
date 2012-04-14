@@ -1,5 +1,6 @@
 --- 
 title: WireFX
+navindex : 040
 ---
 
 WireFX is my own version of a shitty game framework. It is neither better designed nor

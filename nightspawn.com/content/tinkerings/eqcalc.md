@@ -1,5 +1,6 @@
 --- 
 title: EQCalc
+navindex : 050
 ---
 
 EQCalc is an online poker hand equity calculator<br/>

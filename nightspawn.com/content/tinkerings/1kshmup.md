@@ -1,5 +1,6 @@
 --- 
 title: 1kShmup
+navindex: 100
 ---
 
 1kShmup was my go at the [js1k](http://js1k.com) contest. Turns out JavaScript compression is rather difficult, 

@@ -1,5 +1,6 @@
 --- 
 title: (J)GLtut
+navindex : 030
 ---
 
 This is a tutorial I wrote for [one of my professors](http://www.dirkwhoffmann.de/) so he didn't have

@@ -1,5 +1,6 @@
 --- 
 title: WebKnot
+navindex : 010
 ---
 
 After having tried several website authoring tools I decided that I needed something

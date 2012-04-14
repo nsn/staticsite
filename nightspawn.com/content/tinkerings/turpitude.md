@@ -1,5 +1,6 @@
 --- 
 title: Turpitude/Thesis
+navindex : 050
 ---
 
 My diploma thesis/final year project was written while working at [1&1](http://einsundeins.com) and

@@ -1,5 +1,6 @@
 --- 
 title: X3D vs. XVL
+navindex : 020
 ---
 
 This is a paper on XML 3D file formats written for a seminar at the

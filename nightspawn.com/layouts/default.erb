@@ -81,7 +81,7 @@
           <aside class="box">
             <h2><%= item[:title] %></h2>
             <ul>
-            <% @item.children.find_all{ |itm| !itm[:hidden]}.each do |c|  %>
+            <% @item.children.find_all{ |itm| !itm[:hidden]}.sort{|a,b| l = a[:navindex]?a[:navindex]:0; r=b[:navindex]?b[:navindex]:0; r <=> l }.each do |c|  %>
               <li>
                 <%= link_to("&rarr;" + c[:title], c.reps[0].path) %>
               </li>

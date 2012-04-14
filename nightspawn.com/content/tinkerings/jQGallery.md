@@ -1,5 +1,6 @@
 --- 
 title: jQGallery
+navindex : 110
 ---
 
 Somehow I decided I needed to up my Javascript- and JQuery-fu so I wrote jQGallery, a jQuery-plugin that 
