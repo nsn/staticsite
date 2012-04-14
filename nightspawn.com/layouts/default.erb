@@ -72,7 +72,7 @@
     
         <%
           # render aside?
-          renderAside = (item.children.length > 0) && !item[:hideaside]
+          renderAside = (item.children.length > 0 || item[:links]) && !item[:hideaside]
           # article width
           width = "wide"
         %>
@@ -81,12 +81,23 @@
           <aside class="box">
             <h2><%= item[:title] %></h2>
             <ul>
-            <% @item.children.find_all{ |itm| !itm[:hidden]}.sort{|a,b| l = a[:navindex]?a[:navindex]:0; r=b[:navindex]?b[:navindex]:0; r <=> l }.each do |c|  %>
+            <% 
+              # child links
+              @item.children.find_all{ |itm| !itm[:hidden]}.sort{|a,b| l = a[:navindex]?a[:navindex]:0; r=b[:navindex]?b[:navindex]:0; r <=> l }.each do |c|  
+            %>
               <li>
                 <%= link_to("&rarr;" + c[:title], c.reps[0].path) %>
               </li>
             <%end%>
-            <li>
+
+            <%
+              if (item[:links])
+              # links
+              item[:links].each_pair do |key, value|
+            %>
+              <li><a href="<%= value %>">&rarr; <%= key %></a></li>
+            <% end end %>
+            </ul>
           </aside>
           <% width = "narrow" %>
         <% end %>

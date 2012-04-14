@@ -1,6 +1,10 @@
 --- 
 title: jQGallery
 navindex : 110
+links :
+   "download" : "http://satansoft.de/jQGallery/jQGallery.js"
+   "examples" : "http://satansoft.de/jQGallery/examples.html"
+   "github repo" : "https://github.com/nsn/jQgallery"
 ---
 
 Somehow I decided I needed to up my Javascript- and JQuery-fu so I wrote jQGallery, a jQuery-plugin that 
