@@ -66,7 +66,7 @@ def items_for_tag(tag)
       tagitems << i
     end
   end
-  tagitems.to_a.sort_by{ |a| Time.parse(a[:created_at]) }
+  tagitems.to_a.sort_by{ |a| a[:created_at] }
 end
 
 def item_for_id(id) 
