@@ -51,7 +51,7 @@ data_sources:
 #   % rake deploy:rsync
 deploy:
   default:
-    dst: "p6739949@nightspawn.com:~/staticsite"
+    dst: "u69386259@nightspawn.de:~/nightspawn"
     options: ['-ave ssh', '--exclude=.DS_Store', '--exclude=*~']
 
 
